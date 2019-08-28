@@ -41,4 +41,14 @@ class WorldCupTest < Minitest::Test
     assert_equal [@pogba], actual
   end
 
+  def test_it_creates_a_hash_of_all_players_by_position
+    expected = {
+      "forward" => [@mbappe],
+      "midfielder" => [@pogba, @modric],
+      "defender" => [@vida]
+    }
+
+    assert_equal expected, @world_cup.all_players_by_position
+  end
+
 end
